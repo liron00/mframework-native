@@ -29,7 +29,6 @@ MReact.createClass = componentSpec => {
 }
 
 const M = {
-  React: MReact,
   mixin,
   util
 }
@@ -307,3 +306,4 @@ PushNotificationIOS.requestPermissions()
 
 
 export default M
+export {MReact as React}

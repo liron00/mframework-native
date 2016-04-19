@@ -1,22 +1,11 @@
 'use strict'
 
-import immutable from 'immutable'
+import {List, Map as IMap} from 'immutable'
 import {atom, derivation, isDerivable, lens, transact} from 'derivable'
 import React, {
   Text,
   View
 } from 'react-native'
-
-// global.immutable = immutable
-// global.Record = immutable.Record
-// global.List = immutable.List
-// global.IMap = immutable.Map
-// global.ISet = immutable.Set
-// global.atom = atom
-// global.isDerivable = isDerivable
-// global.derivation = derivation
-// global.transact = transact
-// global.lens = lens
 
 if (!console.debug) {
   console.debug = console.log
