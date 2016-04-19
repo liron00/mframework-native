@@ -1,5 +1,6 @@
 'use strict'
 
+import M from './m'
 import {List, Map as IMap} from 'immutable'
 import {atom, derivation, isDerivable, lens, transact} from 'derivable'
 import React, {
@@ -14,7 +15,7 @@ if (!console.debug) {
 let nextId = 0
 let _forceUpdateStack = []
 
-const mixin = {
+export default {
   getInitialState() {
     this.id = nextId++
     this.displayName = this.constructor.displayName
@@ -542,5 +543,3 @@ const mixin = {
     return `<${this.displayName}#${this.id}>`
   }
 }
-
-export default mixin
