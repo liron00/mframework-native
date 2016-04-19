@@ -1,7 +1,8 @@
 'use strict'
 
+import immutable, {List, Map as IMap} from 'immutable'
+import {atom, derivation, lens, transact} from 'derivable'
 import queryString from 'query-string'
-import immutable from 'immutable'
 import Firebase from 'firebase'
 import Fireproof from 'fireproof'
 import md5 from 'md5'
@@ -16,8 +17,7 @@ import mixin from './mixin'
 const MReact = Object.assign({}, React)
 MReact.createClass = componentSpec => {
   const reactSpec = Object.assign({}, componentSpec)
-  // reactSpec.mixins = [M.mixin].concat(componentSpec.mixins || [])
-  reactSpec.mixins = componentSpec.mixins || [M.mixin]
+  reactSpec.mixins = [M.mixin].concat(componentSpec.mixins || [])
   reactSpec.mRender = componentSpec.render
   delete reactSpec.render
   return React.createClass(reactSpec)
@@ -301,6 +301,4 @@ PushNotificationIOS.addEventListener('register', deviceToken => {
 PushNotificationIOS.requestPermissions()
 
 
-global.M = M
-
-module.exports = M
+export default M

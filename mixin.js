@@ -7,16 +7,16 @@ import React, {
   View
 } from 'react-native'
 
-global.immutable = immutable
-global.Record = immutable.Record
-global.List = immutable.List
-global.IMap = immutable.Map
-global.ISet = immutable.Set
-global.atom = atom
-global.isDerivable = isDerivable
-global.derivation = derivation
-global.transact = transact
-global.lens = lens
+// global.immutable = immutable
+// global.Record = immutable.Record
+// global.List = immutable.List
+// global.IMap = immutable.Map
+// global.ISet = immutable.Set
+// global.atom = atom
+// global.isDerivable = isDerivable
+// global.derivation = derivation
+// global.transact = transact
+// global.lens = lens
 
 if (!console.debug) {
   console.debug = console.log
@@ -552,4 +552,4 @@ const mixin = {
   }
 }
 
-module.exports = mixin
+export default mixin
