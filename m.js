@@ -16,8 +16,13 @@ import mixin from './mixin'
 
 const MReact = Object.assign({}, React)
 MReact.createClass = componentSpec => {
+  if (!componentSpec.displayName) {
+    throw new Error(`componentSpec missing displayName`)
+  }
+  if (!(componentSpec.mixins && componentSpec.mixins[0] == M.mixin)) {
+    throw new Error(`componentSpec missing M.mixin`)
+  }
   const reactSpec = Object.assign({}, componentSpec)
-  reactSpec.mixins = [M.mixin].concat(componentSpec.mixins || [])
   reactSpec.mRender = componentSpec.render
   delete reactSpec.render
   return React.createClass(reactSpec)

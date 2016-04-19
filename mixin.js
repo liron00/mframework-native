@@ -37,6 +37,8 @@ const mixin = {
     this._$mRender = atom(this.mRender) // Hot reloading mutates this
     this._gonnaUpdate = false
 
+    this.$ = {} // our derivable-powered equivalent of this.state
+
     if (this.debug) {
       console.debug(`${this}.init`)
     }
