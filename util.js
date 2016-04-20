@@ -1,5 +1,7 @@
 import moment from 'moment'
 
+import M from './m'
+
 module.exports = {
   alertError: (err) => {
     // TODO: Show a modal dialogue

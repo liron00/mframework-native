@@ -2,7 +2,7 @@
   "name": "mframework-native",
   "description": "Framework for React Native + Derivable + Firebase apps",
   "author": "Liron Shapira <wiseguy@gmail.com> (http://liron.me)",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "m.js",
   "repository": {
     "type": "git",
