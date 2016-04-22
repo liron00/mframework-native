@@ -250,7 +250,7 @@ Object.assign(M, {
       M.context.user.set(null)
     })
     await M._setFirebaseToken(null)
-    ref.unauth()
+    M.ref.unauth()
 
     let apiResponse
     try {
