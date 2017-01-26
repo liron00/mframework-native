@@ -2,8 +2,8 @@
   "name": "mframework-native",
   "description": "Framework for React Native + Derivable + Firebase apps",
   "author": "Liron Shapira <wiseguy@gmail.com> (http://liron.me)",
-  "version": "0.2.0",
-  "main": "m.js",
+  "version": "0.2.7",
+  "main": "transpiled/m.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/liron00/mframework-native.git"
@@ -15,7 +15,14 @@
     "derivable": "^0.12.1",
     "firebase": "^2.4.2",
     "immutable": "^3.8.1",
+    "md5": "^2.2.1",
+    "moment": "^2.17.1",
     "query-string": "^4.1.0",
-    "react-native": "^0.27.0-rc2"
+    "react": "~15.3.2",
+    "react-native": "github:exponentjs/react-native#sdk-11.0.3"
+  },
+  "scripts": {
+    "compile": "babel -s -d transpiled --ignore transpiled,node_modules .",
+    "prepublish": "npm run compile"
   }
 }

@@ -4,11 +4,10 @@ import immutable, {List, Map as IMap} from 'immutable'
 import {atom, derivation, lens, transact} from 'derivable'
 import queryString from 'query-string'
 import Firebase from 'firebase'
-import Fireproof from 'fireproof'
 import md5 from 'md5'
-import React, {
+import React from 'react'
+import {
   AsyncStorage,
-  PushNotificationIOS
 } from 'react-native'
 
 import util from './util'
@@ -63,7 +62,7 @@ Object.assign(M, {
       new Firebase(`https://${config.firebaseAppName}.firebaseio.com`) :
       null
     )
-    M.ref = firebase && new Fireproof(firebase)
+    M.ref = firebase
   },
 
   c (componentName, componentSpec) {
@@ -299,10 +298,10 @@ derivation(() => List([
     })
   }
 })
-PushNotificationIOS.addEventListener('register', deviceToken => {
-  M.context.deviceToken.set(deviceToken)
-})
-PushNotificationIOS.requestPermissions()
+// PushNotificationIOS.addEventListener('register', deviceToken => {
+//   M.context.deviceToken.set(deviceToken)
+// })
+// PushNotificationIOS.requestPermissions()
 
 
 export default M

@@ -1,0 +1,8 @@
+{
+  "presets": [
+    "es2015-sane", "react", "stage-1"
+  ],
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
+}
